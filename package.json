@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "scripts": {
+    "beautiful": "lint-staged",
     "start": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,13 +11,22 @@
   "author": "",
   "license": "ISC",
   "description": "",
+  "lint-staged": {
+    "src/**/*.{js,json,scss}": [
+      "prettier --single-quote --reailing-comma all --write"
+    ]
+  },
+
   "dependencies": {
     "express": "^4.19.2",
     "express-handlebars": "^8.0.1"
   },
   "devDependencies": {
+    "husky": "^9.1.5",
+    "lint-staged": "^15.2.10",
     "morgan": "^1.10.0",
     "nodemon": "^3.1.4",
+    "prettier": "^3.3.3",
     "sass": "^1.77.8"
   }
 }
